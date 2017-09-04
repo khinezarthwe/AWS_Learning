@@ -1,0 +1,83 @@
+
+AWS Documentation 
+Amazone Lex
+
+
+Specially for Voice and Text
+===========================
+same with the deep-learing engine that is used in Amazone Alexa (?? = don't know)
+
+
+What is Amazone Alexa ?
+
+Alexa, the voice service that powers Echo, provides capabilities, or skills, that enable customers to interact with devices in a more intuitive way using voice. 
+for training model , when the more customers use Alexa, the more alexa adapts to speech patterns, vocabulary, and personal preferences. 
+
+https://developer.amazon.com/alexa
+
+Alexa -----> only for Voice 
+Lex -------> Voice and text 
+
+Main target 
+Natural language chat box 
+Natural language understanding
+Automatic speed recognition
+
+
+
+Using Amazone Lex
+-inputing the basic conversation to AWS console, Lex manages the dialog and adjust the response 
+-Easily built the conversational chat bots quickly (We don't need to consider for Deep Learning Strategy)
+-adding the conversational interfaces to bots on mobile devices, web applications, and chat platforms (for example, Facebook Messenger).
+
+
+Supporting 
+- Amazon Lex provides pre-built integration with AWS Lambda(?? = What is AWS Lambda? <-- have to learn)
+- Because of integration with Lambda bots using AWS can access pre-built serverless enterprise connectors to link to data in ////SaaS applications, such as Salesforce, HubSpot, or Marketo.////<--- noted to read
+
+
+
+Benefits
+
+Simplicity : 
+can the chatbox within a minute
+Lex Automatically create the training model for sophisticated task (for voice and text)
+
+Democratized deep learning technologies: 
+-Speech recognition and natural language understanding are main challenge for construction the automatic chat bots in computer science but Lex use Deep-learning Technology. (developers do not need to consider for the training dataset)
+-Amazon Lex chatbots convert incoming speech to text and provide to complete response 
+
+
+
+Seamless deployment and scaling:
+-Chat service can access via AWS console so that developer do not need to worry about provisioning hardware and managing infrastructure.
+
+
+Built-in integration with the AWS platform:
+
+-take the full of advantage the power of the AWS platform 
+
+
+Cost-effectiveness:
+
+pay as you go (charged as only for the text and speed request)
+can try without initial investment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
