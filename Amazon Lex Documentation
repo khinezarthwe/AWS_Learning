@@ -36,6 +36,8 @@ Supporting
 - Because of integration with Lambda bots using AWS can access pre-built serverless enterprise connectors to link to data in ////SaaS applications, such as Salesforce, HubSpot, or Marketo.////<--- noted to read
 
 
+AWS Lambda is a compute service that lets you run code without provisioning or managing servers. (can run code for virtually any type of application or backend service - all with zero administration)
+
 
 Benefits
 
@@ -65,7 +67,50 @@ can try without initial investment
 
 
 
+--------------------------------------------------------------------
 
+Amazon Lex Core Concepts and Terminology
+
+
+Bot 
+	Bot Action (Automatic Speech Recognition (ASR) and Natural Language Understanding (NLU))
+Intent
+	The action that you want to perform.
+	Intent name – A descriptive name for the intent. For example, OrderPizza.
+	Sample utterances – How a user might convey the intent. 
+	For example, a user might say "Can I order a pizza please" or "I want to order a pizza".
+	How to fulfill the intent – providing necessary information for intent. 
+
+Slot
+	For intent configuration , developers need zero or more slot parameters. 
+Slot type
+	each slot has a type (built in or custom) 
+	size (small, medium, large)
+
+
+
+
+Getting Start with AWS Lex
+
+1. AWS Account <------ Already provided by Digital Laboratory
+2. Setup the command line interface 
+	Install the AWS CLI Using the Bundled Installer (Linux, macOS, or Unix)
+	http://docs.aws.amazon.com/cli/latest/userguide/awscli-install-bundle.html
+3. Getting Start via console
+
+Exercise 1: Create an Amazon Lex Bot Using a Blueprint (Console)
+What is Amazon Blueprint?
+
+Amazon Lex bot blueprints is the sample testing bot for user containing AWS Lambda Functions. They support 3 samples 
+Amazon Lex blueprint — OrderFlowers
+Amazon Lex blueprint — ScheduleAppointment
+Amazon Lex blueprint — BookTrip
+
+
+
+
+Additional Example 
+http://docs.aws.amazon.com/lex/latest/dg/additional-exercises.html
 
 
 
