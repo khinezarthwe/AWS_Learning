@@ -1,0 +1,15 @@
+Testing LEX bot with Facebook
+Learning Facebook developer tool
+--> Can't connect with Facebook developer tool and Amazon Lex
+
+
+==========================
+The flow of information between the client and Amazon Lex 
+
+
+-User Utterances (Text or Voice) - eg, "I would like to order some flowers"
+-Client console send the PostContent Request to Amazon Lex
+-Amazon Lex detects the intent (OrderFlowers). It then chooses one of the intent's slots (in this case, the FlowerType) and one of its value elicitation prompts, and then sends a response
+-User response is saved and update the slot values for the current intent's slot. Doing these steps for all slots.
+-Before proceeding the fulfilling the requirement (finishing all slot information from users), Lex sends the requesting information header. 
+-If it is confirmed, Lex proceeded the fulfilments to the user.
