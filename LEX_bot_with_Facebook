@@ -13,3 +13,17 @@ The flow of information between the client and Amazon Lex
 -User response is saved and update the slot values for the current intent's slot. Doing these steps for all slots.
 -Before proceeding the fulfilling the requirement (finishing all slot information from users), Lex sends the requesting information header. 
 -If it is confirmed, Lex proceeded the fulfilments to the user.
+
+Integrating an Amazon Lex Bot with Facebook Messenger
+
+
+Today Testing (Facebook page bot with amazone lex)
+
+1. Create Facebook app from Facebook Developer Tool.
+2. Noted App Id and Page access token.
+3. Create amazone Lex Bot via Amazone Lex Console.
+4. Public the Bot (noted the callbackurl).
+5. Set up a webhook in facebook app UI by adding callback URL of Amazon Lex Bot.
+6. Enable Webhooks integration. Choose the page you created, and then choose subscribe.
+
+Successfully link with Facebook and Amazon and can use the Messenger BOT!!!!!!!!!!

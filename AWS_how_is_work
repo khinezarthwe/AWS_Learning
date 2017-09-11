@@ -1,0 +1,86 @@
+AWS Lex Pricing !
+10,000 text requests and 5,000 speech requests per month for free for the first year.
+$0.004 per voice request, and $.00075 per text request.
+
+
+
+Service Permissions
+
+Amazon Lex uses two IAM service-linked roles:
+
+AWSServiceRoleForLexBots — Amazon Lex uses this service-linked role to invoke Amazon Polly to synthesize speech responses for your bot.
+AWSServiceRoleForLexChannels — Amazon Lex uses this service-linked role to post text to your bot when managing channels.
+
+You don't need to manually create either of these roles. When you create your first bot using the console, Amazon Lex creates the AWSServiceRoleForLexBots role for you. When you first associate a bot with a messaging channel, Amazon Lex creates the AWSServiceRoleForLexChannels role for you.
+
+Creating Resource-Based Policies for AWS Lambda
+
+When Lexbot wanted to allow Lambda function, developer have to the permission on AWS　Lex Console.
+Lambda AddPermisssion API
+Principal field ---> lex.amazonaws.com 
+SourceArn ---> ARN of the intent invoke the function
+
+Deleting Roles
+
+From the Role Management Tools, and can delete roles.
+
+
+Managing Messages (Prompts and Statements)
+
+Types of Message 
+Prompt – A prompt expects a user response, typically a question.
+Statement – A statement does not expect a response.
+
+Lex aware of Slot name and Attribute name in current version. For example:
+
+Pick up the {FlowerType} at what time on {PickupDate}?
+Okay, your {FlowerType} will be ready for pickup by {PickupTime} on {PickupDate} at our {Location} branch.  Does this sound okay?
+
+
+If we add code hooks using Lambda functions in our intent configuration, we can create messages dynamically. Lambda functions can generate messages and return them to Amazon Lex to send to the user. (Lambda function with Lex -> not testing yet )
+
+Contexts for Configuring Messages
+
+Bot-level messages
+	Amazon Lex uses the clarification prompts if it does not understand the user's intent.(configure the number of times)
+	--> photo
+	Amazon Lex uses the hang-up statement whenever the user doesn't respond with an appropriate answer for a prompt within the maximum permissible attempts.
+	--> Please explain with amazon console
+
+Intent-level messages 
+	We can configure the intent-level messages such as confirmation prompts, cancel statements, goodbye message, slot prompts and prompts that Amazon Lex can use to elicit slot values.
+		Confirmation prompts and cancel statements (when the user provided all information , Amazon Lex asks the user for confirmation using the specified message before fulfilling the intent)
+		Goodbye message or follow-up prompts (normally we didn't but if you provide with Lambda function, we can configure)
+		Prompts to elicit value slot values (You must specify at least one prompt message for each of the required slots in an intent)
+
+Supported Message Formats
+	plain text
+	Speech Synthesis Markup Language (SSML) 
+	-----> BadRequestException 
+	-----> Currently, Amazon Lex supports US English
+
+
+Response Cards
+response cards are used to simplify interactions for users and increase bot's accuracy by reducing typographical errors in text interactions.
+
+	a response card for the following prompts:
+
+Conclusion statement
+Confirmation prompt
+Follow-up prompt
+Rejection statement
+Slot type utterances
+
+we can configure response cards 
+	creating intent
+	static response cards (using console)
+	dynamic response cards (using lambda function)
+
+It transforms response cards for Facebook Messenger, Slack, and Twilio.For other clients, Amazon Lex sends a JSON structure in the PostText response. (not testing yet)
+
+Response card doesn't work
+
+
+
+
+
