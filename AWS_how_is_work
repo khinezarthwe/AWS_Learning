@@ -80,6 +80,13 @@ It transforms response cards for Facebook Messenger, Slack, and Twilio.For other
 
 Response card doesn't work
 
+"When testing the bot using the client provided by the Amazon Lex console, you cannot see the response card." 
+----> The person who would like to test response cards, test in the deployment , lex console doesn't support it. 
+
+
+
+
+
 
 
 

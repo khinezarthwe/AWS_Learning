@@ -1,0 +1,70 @@
+Managing Conversation Context
+
+conversation text are important for constructing Custom chatbot. Because these will be provide the Amazon Lex to fulfill an intent.
+
+Setting the Session Timeout
+
+By default, the session duration is five minutes, but you can specify any duration between 0 and 1,440 minutes (24 hours).
+--> If the user returns before expiration , only need to provide the remaining slot data and complete the purchase.
+
+
+Setting Session Attributes
+
+
+Session attributes contain application-specific information that is passed between Amazon Lex and a client application.
+
+Mostly used in Lambda function to customize prompts and response card.
+(if Lambda function use it, it pass the encrypted data to function , if not save it by Amazon lex)
+
+Sharing Information Between Intents
+
+Amazon Lex supports sharing information between intents. To share across intents, you use session attributes.
+
+For example,  user order the shoes
+			  fill all require informaition to intents(the action that user want to perform).
+			  but user change the shoes types.
+			  Bot doesn't need to ask the detail informaiton again and using share information between intents , bot can manage the order without asking again.
+
+
+Setting Complex Attributes
+
+Session attributes are a string-to-string map of attributes and values. 
+
+In some cases, however, developers might need to transfer binary data or a complex structure that can't be easily converted to a string map. 
+For example, 
+var obj = {
+   "cities": [
+      {
+         "city": {
+            "name": "New York",
+            "state": "New York",
+            "pop": "8537673"
+         }
+      },
+      {
+         "city": {
+            "name": "Los Angeles",
+            "state": "California",
+            "pop": "3976322"
+         }
+      },
+      {
+         "city": {
+            "name": "Chicago",
+            "state": "Illinois",
+            "pop": "2704958"
+         }
+      }
+   ]
+}
+
+Lex accepts via PostContext and PostText operations. If developer wanted to submit such kind of object, firslty, they convert the data to a base64-encoded string, and then sending the string as the value in the session attributes.
+
+Custom Slot types
+
+For each slot type, you can define a maximum of 10,000 values and synonyms. Each bot can have a total number of 50,000 slot type values and synonyms.
+
+ 
+
+
+
