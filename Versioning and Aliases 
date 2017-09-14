@@ -1,1 +1,20 @@
 Versioning and Aliases
+
+A version is a numbered snapshot of our work that we can publish for use in different parts of your workflow. (development, deployment and production)
+
+
+An alias is a pointer to a specific version of an Amazon Lex bot. Use an alias to allow client applications to use a specific version of the bot without requiring the application to track which version that is.
+
+
+Delete an Amazon Lex Resource or Version
+
+Via console or via API operation
+
+DeleteBot
+DeleteBotVersion
+DeleteBotAlias
+DeleteBotChannelAssociation
+DeleteIntent
+DeleteIntentVersion
+DeleteSlotType
+DeleteSlotTypeVersion

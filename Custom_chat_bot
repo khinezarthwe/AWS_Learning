@@ -1,0 +1,21 @@
+Creating Custom Chatbot using Lambda function!
+
+
+1. First write the Lambda Function to access the input from chat bot. (Lambda function is done under AWS Lambda using Note.js code)
+
+2. Create the custom chatbot via AWS Lex console.
+
+3. Create the custom Intent for desired bot.
+
+4. Provide the intent with custom slot.
+
+5. Add the Sample utterances for user input. 
+
+6. Define the slot and their question?
+
+7. Link the custom chatbot with Lambda function.
+
+8. And then build it and test it. 
+
+
+Done!!!!!!!!!!
