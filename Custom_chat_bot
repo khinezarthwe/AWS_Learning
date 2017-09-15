@@ -19,3 +19,11 @@ Creating Custom Chatbot using Lambda function!
 
 
 Done!!!!!!!!!!
+
+
+Publish a Version and Create an Alias
+
+Only publish version can connect the outside world.
+
+Before publishing we have to set the alias that user can understand.
+
