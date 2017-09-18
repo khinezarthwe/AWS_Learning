@@ -1,1 +1,74 @@
-まだできない
+Creating the custom chat bot via command line 
+
+1. To create a service-linked role 
+
+	aws iam create-service-linked-role --aws-service-name lex.amazonaws.com
+
+	aws iam get-role --role-name AWSServiceRoleForLexBots
+
+
+2. Create a Custom Slot Type 
+	
+	aws lex-models put-slot-type --name FlowerTypes --cli-input-json file://FlowerTypes.json 
+
+	call the put slot type operation for creating custom slot type.
+
+
+3. Create an Intent 
+
+	aws lex-models put-intent --name OrderFlowers --cli-input-json file://OrderFlowers.json
+
+	call the put intent operation for creating custom Intent
+
+4. Create the bot
+
+	aws lex-models put-bot --name OrderFlowersBot --cli-input-json file://OrderFlowersBot.json
+
+	call the put-bot operation to create the bot.
+
+
+5. Test the Bot Using Text Input
+
+	aws lex-runtime post-text --bot-name OrderFlowersBot --bot-alias "\$LATEST" --user-id UserOne --input-text "i would like to order flowers"
+
+	aws polly synthesize-speech --output-format pcm --text "i would like to order flowers" --voice-id "Kendra" IntentSpeech.mpg
+
+
+	Post Text for text conservation and Post content for audio conservation. 
+
+6 . Modifying the bot
+
+	Modify the each json file that we would like to develop. 
+
+	and build it again.
+
+	"processBehavior": "BUILD",
+
+7. Adding Lambda Function 
+	
+	http://docs.aws.amazon.com/lex/latest/dg/gs-cli-update-lambda.html
+
+8. Publishing the version
+	
+	Publish a version of a slot type with the CreateSlotTypeVersion operation.
+
+	Publish a version of an intent with the CreateIntentVersion operation.
+
+	Publish a version of a bot with the CreateBotVersion operation .
+
+9. Create an Alias 
+
+10. Clean up 
+
+
+
+
+
+
+
+
+
+
+
+
+
