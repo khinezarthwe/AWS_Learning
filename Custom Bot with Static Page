@@ -1,0 +1,21 @@
+
+Learning Custom Bot with Static Page
+
+https://aws.amazon.com/blogs/ai/greetings-visitor-engage-your-web-users-with-amazon-lex/
+
+
+1. Build the Amazon lex chatbot
+
+2.Set up Amazon Cognito
+	Create a pool for static page and remark the poolid for it.
+
+3. IAM > Roles > Cognito_bot_pool_Unauth_Role > 
+	Attach the policies:
+	AmazonLexRunBotsOnly
+	AmazonPollyReadOnlyAccess 
+
+
+4. Write the chatbox static page using poolId and Bot name
+
+Successfully Done!!!!!
+
