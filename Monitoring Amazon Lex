@@ -1,0 +1,46 @@
+Monitoring Amazon Lex
+
+Monitoring is important for maintaining the reliability, availability, and performance of Amazon Lex chatbots. 
+
+Monitoring Amazon Lex with Amazon CloudWatch
+
+Viewing Matrix via Amazon Lex Console
+Viewing Matrix via Amazon Cloud Watch
+
+
+Creating ALarm!
+
+Possible Matrix of Amazon Lex Via Amazon CloudWatch
+
+http://docs.aws.amazon.com/lex/latest/dg/aws-lex-cloudwatch-dimensions.html
+
+
+
+Monitoring Amazon Lex API Calls with AWS CloudTrail Logs
+
+Amazon Lex is integrated with AWS CloudTrail, a service that captures all of the Amazon Lex API calls and delivers log files to an S3 bucket.
+
+
+Each operation creates a log entry containing request information. Only the following operations contain response information:
+
+CreateBotVersion, CreateIntentVersion, CreateSlotTypeVersion
+PutBot, PutBotAlias, PutIntent, PutSlotType
+
+
+Every log entry contains information about who generated the request. Use the user identity in log entries to determine the following:
+
+Whether the request was made with root or IAM user credentials
+Whether the request was made with temporary security credentials for a role or federated user
+Whether the request was made by another AWS service
+figure
+
+
+Log files are stored in an S3 bucket. CloudTrail determines when to create and write to a new file based on a time period and file size that you specify.
+
+We can store log files in our S3 bucket for as long as we want. We can also define Amazon S3 lifecycle rules to archive or delete log files automatically. By default, our log files are encrypted with Amazon S3 server-side encryption (SSE).
+
+
+https://console.aws.amazon.com/cloudtrail/home?region=us-east-1#/events
+
+
+figure

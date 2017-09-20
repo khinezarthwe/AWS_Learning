@@ -1,0 +1,42 @@
+
+General Guidelines
+
+Signing requests 
+
+All Amazon Lex model-building and runtime API operations in the API Reference use signature V4 for authenticating requestspl
+
+For PostContent, 
+
+"POST /bot/Traffic/alias/$LATEST/user/someuser/content HTTP/1.1[\r][\n]"
+"x-amz-lex-session-attributes: eyJ1c2VyTmFtZSI6IkJvYiJ9[\r][\n]"
+"Content-Type: audio/x-l16; channel-count=1; sample-rate=16000f[\r][\n]"
+"Accept: audio/mpeg[\r][\n]"
+"Host: runtime.lex.us-east-1.amazonaws.com[\r][\n]"
+"Authorization: AWS4-HMAC-SHA256 Credential=BLANKED_OUT/20161230/us-east-1/lex/aws4_request, 
+SignedHeaders=accept;content-type;host;
+x-amz-content-sha256;x-amz-date;x-amz-lex-session-attributes, 
+Signature=78ca5b54ea3f64a17ff7522de02cd90a9acd2365b45a9ce9b96ea105bb1c7ec2[\r][\n]"
+"X-Amz-Date: 20161230T181426Z[\r][\n]"
+"X-Amz-Content-Sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855[\r][\n]"
+"Transfer-Encoding: chunked[\r][\n]"
+"Connection: Keep-Alive[\r][\n]"
+"User-Agent: Apache-HttpClient/4.5.x (Java/1.8.0_112)[\r][\n]"
+"Accept-Encoding: gzip,deflate[\r][\n]"
+"[\r][\n]"
+"1000[\r][\n]"
+"[0x7][0x0][0x7][0x0][\n]"
+"[0x0][0x7][0x0][0xfc][0xff][\n]"
+"[0x0][\n]"
+
+
+Note the following about how Amazon Lex captures slot values from user utterances:
+
+Amazon Lex uses the enumeration values you provide in a slot type.
+
+Custom Instent	======>	Utterance 	=========> passes it toclient application or Lambda functions ========> check that slot values =======> fulfillment activity
+
+the case of the slot values is not guaranteed
+For example, if we are eliciting values for the AMAZON.Movie built-in slot type
+User can get the unexpected result.
+
+
