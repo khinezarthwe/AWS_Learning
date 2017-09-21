@@ -6,6 +6,7 @@ Signing requests
 All Amazon Lex model-building and runtime API operations in the API Reference use signature V4 for authenticating requestspl
 
 For PostContent, 
+a header with the name x-amz-content-sha256 and the value UNSIGNED-PAYLOAD in the PostContent request.
 
 "POST /bot/Traffic/alias/$LATEST/user/someuser/content HTTP/1.1[\r][\n]"
 "x-amz-lex-session-attributes: eyJ1c2VyTmFtZSI6IkJvYiJ9[\r][\n]"
@@ -33,10 +34,31 @@ Note the following about how Amazon Lex captures slot values from user utterance
 
 Amazon Lex uses the enumeration values you provide in a slot type.
 
-Custom Instent	======>	Utterance 	=========> passes it toclient application or Lambda functions ========> check that slot values =======> fulfillment activity
+Custom Instent	======>	Utterances 	=========> passes it to client application or Lambda functions ========> check that slot values =======> fulfillment activity
 
 the case of the slot values is not guaranteed
 For example, if we are eliciting values for the AMAZON.Movie built-in slot type
 User can get the unexpected result.
+For example, Amazon Movies , Amazon Times , Amazon Time
+
+
+
+Amazon Lex does not support the AMAZON.LITERAL built-in slot type that the Alexa Skills Kit supports.( Amazon Literal means case sensitive case like Flower or flower)
+
+
+
+
+Providing confusable training data in bot reduces Amazon Lex's ability to understand user input. Consider these examples:
+ 
+Suppose have two intents (OrderPizza and OrderDrink) in your bot and both are configured with an "I want to order" utterance. 
+
+
+The runtime API operations PostContent and PostText take a user ID as the required parameter.
+
+Developers can set this to any value that meets the constraints described in the API. We recommend you don't use this parameter to send any confidential information such as user logins, emails, or social security numbers. 
+
+We encourage you to define an intent that captures a user's intention to discontinue the conversation. For example, you can define an intent (NothingIntent) with sample utterances ("I don't want anything", "exit", "bye bye")
+
+
 
 

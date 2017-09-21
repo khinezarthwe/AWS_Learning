@@ -1,0 +1,53 @@
+Limits
+
+General Limits
+Currently, Amazon Lex is available in us-east-1 region.
+Amazon Lex supports only US English language.
+
+
+Runtime Service Limits
+API
+Input speech in the PostContent can be up to 15 seconds long.
+ 
+In both the runtime API operations PostContent and PostText, the input text size can be up to 1024 Unicode characters.
+ 
+The maximum size of PostContent headers is 16 KB. The maximum size of request and session headers combined is 12 KB.
+ 
+The maximum input size to a Lambda function is 12 KB. The maximum output size is 25 KB, of which 12 KB can be session attributes.
+ 
+
+
+
+Model Building Limits
+Intent Limits
+Slot Type Limits
+
+
+http://docs.aws.amazon.com/lex/latest/dg/gl-limits.html
+
+
+
+
+
+Understanding Resource Ownership
+
+If you use the root account credentials of your AWS account to create a bot, your AWS account is the owner of the resource (in Amazon Lex, the resource is the bot).
+
+If you create an IAM user in your AWS account and grant permissions to create a bot to that user, the user can create a bot. However, your AWS account, to which the user belongs, owns the bot resource.
+
+If you create an IAM role in your AWS account with permissions to create a bot, anyone who can assume the role can create a bot. Your AWS account, to which the role belongs, owns the bot resource.
+
+
+Amazon Lex API Permissions: Actions, Resources, and Conditions Reference
+http://docs.aws.amazon.com/lex/latest/dg/lex-api-permissions-ref.html
+
+API Reference
+
+
+
+
+
+
+http://docs.aws.amazon.com/lex/latest/dg/API_Operations_Amazon_Lex_Model_Building_Service.html
+http://docs.aws.amazon.com/lex/latest/dg/API_Types_Amazon_Lex_Model_Building_Service.html
+http://docs.aws.amazon.com/lex/latest/dg/API_Types_Amazon_Lex_Runtime_Service.html
